@@ -40,10 +40,13 @@ const linkContainer = {
   alignItems: "center"
 };
 
-
+const navbarStyle = {
+  backgroundColor: '#2613fe',
+  height: "80px"
+};
 
   return (
-    <Navbar style={{backgroundColor: '#2613fe'}} expand="lg">
+    <Navbar style={navbarStyle} expand="lg">
       <Container>
         <Navbar.Brand style={navbarTitle} href="#home">Gator Security Fundamentals</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
