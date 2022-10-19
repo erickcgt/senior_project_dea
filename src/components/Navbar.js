@@ -21,7 +21,7 @@ const dropdown = {
 const dropdownItem = {
   color: "white",
   backgroundColor: "#2613fe",
-  fontFamily: "Gluten",
+  fontFamily: "Gluten"
  
 };
 
@@ -29,7 +29,7 @@ const navLink = {
   color: "white",
   fontFamily: "Gluten",
   fontSize: "18px",  
-  flexDirection: "column",
+  flexDirection: "column"
   
 };
 
@@ -49,8 +49,8 @@ const linkContainer = {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav class="navbar-nav ms-auto mb-2 mb-lg-0" style={{color:'white'}}>            
-            <Nav.Link style={navLink} eventKey={1} href="#"> <div class="linkContainer"><div>Learn</div><img src='./bookIcon.png' alt=''/></div></Nav.Link>                 
-            <Nav.Link style={navLink} eventKey={2} href="#"><div class="linkContainer"><div>Game</div><img src='./gameIcon.png' alt=''/></div></Nav.Link>
+            <Nav.Link style={navLink} eventKey={1} href="#"> <div style={linkContainer}><div>Learn</div><img src='./bookIcon.png' alt=''/></div></Nav.Link>                 
+            <Nav.Link style={navLink} eventKey={2} href="#"><div style={linkContainer}><div>Game</div><img src='./gameIcon.png' alt=''/></div></Nav.Link>
             <NavDropdown style={dropdown} eventKey={3} title={<img src='./profileIcon.png' alt=''/>}>
                 <NavDropdown.Item style={dropdownItem} eventKey={3.1}>My Profile</NavDropdown.Item>
                 <NavDropdown.Item style={dropdownItem} eventKey={3.2}>Logout</NavDropdown.Item>
