@@ -29,7 +29,7 @@ function MyWelcomePage(){
         <div style={mainPage}>
         <div style={welcomeContainer}>
         <div style={welcomeHeader}>Welcome, User!</div>
-        <div style={welcomeText}>Please navigate through the website to read about different security topics, and then test your knowledge through the game. Score points by thoroughly reading and answering questions as well as completing activities in the game. Check our your profile to see your stats. Best of luck!</div>
+        <div style={welcomeText}>Please navigate through the website to read about different security topics, and then test your knowledge through the game. Score points by thoroughly reading and answering questions as well as completing activities in the game. Check out your profile to see your stats. Best of luck!</div>
         </div>
         </div>
     );

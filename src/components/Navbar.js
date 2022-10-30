@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { LinkContainer } from "react-router-bootstrap"
 
 
 
@@ -48,14 +49,14 @@ const navbarStyle = {
   return (
     <Navbar style={navbarStyle} expand="lg">
       <Container>
-        <Navbar.Brand style={navbarTitle} href="#home">Gator Security Fundamentals</Navbar.Brand>
+        <LinkContainer to="/welcome" style={navbarTitle}><Navbar.Brand style={navbarTitle}>Gator Security Fundamentals</Navbar.Brand></LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav class="navbar-nav ms-auto mb-2 mb-lg-0" style={{color:'white'}}>            
-            <Nav.Link style={navLink} eventKey={1} href="#"> <div style={linkContainer}><div>Learn</div><img src='./bookIcon.png' alt=''/></div></Nav.Link>                 
-            <Nav.Link style={navLink} eventKey={2} href="#"><div style={linkContainer}><div>Game</div><img src='./gameIcon.png' alt=''/></div></Nav.Link>
+            <LinkContainer to="/learn" style={navLink}><Nav.Link style={navLink} eventKey={1}> <div style={linkContainer}><div>Learn</div><img src='./bookIcon.png' alt=''/></div></Nav.Link></LinkContainer>                 
+            <LinkContainer to="/game" style={navLink}><Nav.Link style={navLink} eventKey={2} ><div style={linkContainer}><div>Game</div><img src='./gameIcon.png' alt=''/></div></Nav.Link></LinkContainer>
             <NavDropdown style={dropdown} eventKey={3} title={<img src='./profileIcon.png' alt=''/>}>
-                <NavDropdown.Item style={dropdownItem} eventKey={3.1}>My Profile</NavDropdown.Item>
+                <LinkContainer to="/myprofile" style={dropdownItem}><NavDropdown.Item style={dropdownItem} eventKey={3.1}>My Profile</NavDropdown.Item></LinkContainer>
                 <NavDropdown.Item style={dropdownItem} eventKey={3.2}>Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
