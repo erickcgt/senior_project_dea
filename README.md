@@ -18,3 +18,5 @@ Then, run the following commands to install the necessary packages:
 5) npm install bcryptjs
 6) npm install jsonwebtoken
 
+
+To run the server use the following command: node server
