@@ -3,7 +3,7 @@ function LearnPage(){
    
 
     return(
-        <h1>Hello</h1>
+        <h1>Learn Page</h1>
     );
 }
 
