@@ -18,5 +18,15 @@ Then, run the following commands to install the necessary packages:
 5) npm install bcryptjs
 6) npm install jsonwebtoken
 
+Then within the package.json file, replace the scripts value "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+  
+  with "scripts": {
+    "start": "node server.js"
+  }
+  
+Also, if the name value is note "Server", replace that name with "Server". It should be "Server" by default.
+
 
 To run the server use the following command: node server
