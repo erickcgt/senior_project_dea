@@ -2,6 +2,21 @@
 
 To run the react portion just run: npm start
 
+INITIALLY, YOU NEED CLONE THE REPO:
+1) make a folder somewhere on your computer
+2) cd to that folder from the command line
+3) run git clone https://github.com/erickcgt/senior_project_dea.git
+
+IF CHANGES ARE MADE TO THE LIVE REPO (HERE ON GITHUB) AND YOU WANT YOUR LOCAL REPO TO GET THOSE CHANGES:
+1) cd to your local folder
+2) run git pull origin main
+
+IF YOU HAVE MADE LOCAL CHANGES (IN YOUR LOCAL REPO) AND WANT TO PUT THEM ON THE LIVE REPO (HERE ON GITHUB):
+1) cd to your local folder
+2) run git add .
+3) run git commit -m "your commit message"
+4) run git push
+
 
 SERVER INSTALLATIONS:
 
