@@ -8,11 +8,11 @@ INITIALLY, YOU NEED CLONE THE REPO:
 3) run git clone https://github.com/erickcgt/senior_project_dea.git
 
 IF CHANGES ARE MADE TO THE LIVE REPO (HERE ON GITHUB) AND YOU WANT YOUR LOCAL REPO TO GET THOSE CHANGES:
-1) cd to your local folder
+1) cd to your local folder (the parent folder of your .git file)
 2) run git pull origin main
 
 IF YOU HAVE MADE LOCAL CHANGES (IN YOUR LOCAL REPO) AND WANT TO PUT THEM ON THE LIVE REPO (HERE ON GITHUB):
-1) cd to your local folder
+1) cd to your local folder (the parent folder of your .git file)
 2) run git add .
 3) run git commit -m "your commit message"
 4) run git push
