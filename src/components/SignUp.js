@@ -36,6 +36,7 @@ export default class SignUp extends Component {
       console.log(data,"userRegister");
       if(data.status=="ok"){
         alert("Registration was successful");
+        window.location.href="./sign-in"
       }
     })
   }
