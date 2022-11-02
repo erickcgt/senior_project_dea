@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import './LoginAndSignUp.css';
+import gator from '../images/gator.png';
 
 export default class Login extends Component {
     constructor(props){
@@ -38,51 +40,43 @@ export default class Login extends Component {
     }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h3>Sign In</h3>
+      <div>
+        <img className="gator-image" src={gator}  />
+        <form onSubmit={this.handleSubmit}>
+          <h3 className='title-name'>Sign In</h3>
 
-        <div className="mb-3">
-          <label>Email </label>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Enter email..."
-            onChange={e=>this.setState({email:e.target.value})}
-          />
-        </div>
-
-        <div className="mb-3">
-          <label>Password</label>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Enter password..."
-            onChange={e=>this.setState({password:e.target.value})}
-          />
-        </div>
-
-        <div className="mb-3">
-          <div className="custom-control custom-checkbox">
+          <div className="mb-3">
+            <label>Email </label>
             <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
+              type="email"
+              className="form-control"
+              placeholder="Enter email..."
+              onChange={e=>this.setState({email:e.target.value})}
             />
-            <label className="custom-control-label" htmlFor="customCheck1">
-              Remember me
-            </label>
           </div>
-        </div>
 
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </div>
-        <p className="forgot-password text-right">
-          Not registered? <a href="/sign-up">Sign up!</a>
-        </p>
-      </form>
+          <div className="mb-3">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter password..."
+              onChange={e=>this.setState({password:e.target.value})}
+            />
+          </div>
+
+          
+
+          <div className="d-grid">
+            <button type="submit" className="btn btn-primary">
+              Login
+            </button>
+          </div>
+          <p className="forgot-password text-right">
+            Not registered? <a href="/sign-up">Sign up!</a>
+          </p>
+        </form>
+      </div>
     )
   }
 }

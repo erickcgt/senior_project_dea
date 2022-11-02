@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-  
+
 function LearnPage() {
 
     const container = {
@@ -25,7 +25,7 @@ function LearnPage() {
 
     const tabs = {
         fontFamily:"Gluten",
-        color:"#2613fe"     
+        color:"#2613fe",     
                
     };
 
@@ -33,7 +33,7 @@ function LearnPage() {
 
         padding:"30px",       
         boxShadow:"0 3px 10px rgba(0,0,0,.3)",
-        fontFamily:"Gluten",        
+        fontFamily:"Gluten",       
         
     };
 
@@ -48,8 +48,8 @@ function LearnPage() {
   return (
     <div style={container}>
       <h4 style={heading}>Secure Code Concepts</h4>
-      <Tabs fill justify defaultActiveKey="second" style={tabs}>
-        <Tab eventKey="first" title="Cross-Site Scripting" style={tab}>
+      <Tabs fill justify defaultActiveKey="first" style={tabs} >
+        <Tab eventKey="first" title="Cross-Site Scripting" style={tab} >
          Cross-site scripting (XSS) is when an attacker inserts malicious scripts, usually JavaScript, into a web application. When the browser sees the script, it executes the code. This type of attack is one of the most common vulnerabilities. But, most of the time the vulnerabilities are hidden like through a link, an e-mail, and so on. The three types of cross-site scripting are as follows:
          <div style={{paddingTop:"15px", width:"70%", alignItems: "center", marginLeft: "auto", marginRight: "auto"}}><ul style={list}>
             <li>Reflected: Malicious code that is embedded in the HTTP request is "reflected" back to the user. </li><div style={{paddingBottom:"10px"}}></div>
@@ -58,13 +58,13 @@ function LearnPage() {
             </ul> 
             </div> Sourced from CodePath, OWASP, and Veracode.
         </Tab>
-        <Tab eventKey="second" title="SQL Injection" style={tab}>
+        <Tab eventKey="second" title="SQL Injection" style={tab} >
           2nd tab content
         </Tab>
-        <Tab eventKey="third" title="Malicious Input" style={tab}>
+        <Tab eventKey="third" title="Malicious Input" style={tab} >
           3rd tab content
         </Tab>
-        <Tab eventKey="fourth" title="User Authentication" style={tab}>
+        <Tab eventKey="fourth" title="User Authentication" style={tab} >
           4th tab content
         </Tab>
       </Tabs>

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "daymao (DEA Squad)",
+  "author": "Daymao, Erick and Annalina (DEA Squad)",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

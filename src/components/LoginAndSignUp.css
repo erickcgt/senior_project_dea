@@ -1,0 +1,30 @@
+.title-name{
+    font-family: 'Gluten';
+}
+
+.mb-3{
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Gluten';
+}
+
+.d-grid{
+    font-family: 'Gluten';
+    width: 12.5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gator-image{
+    width: auto;
+    height: 20vh;
+}
+
+.forgot-password{
+    font-family: 'Gluten';
+}
+
+.user-info{
+    font-family: 'Gluten';
+}

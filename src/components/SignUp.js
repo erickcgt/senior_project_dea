@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import './LoginAndSignUp.css';
+import gator from '../images/gator.png';
 
 export default class SignUp extends Component {
   constructor(props){
@@ -36,53 +38,56 @@ export default class SignUp extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h3>Sign Up</h3>
+      <div>
+        <img className="gator-image" src={gator}  />
+        <form onSubmit={this.handleSubmit}>
+          <h3 className='title-name'>Sign Up</h3>
 
-        <div className="mb-3">
-          <label>First name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter first name..."
-            onChange={e=>this.setState({fname:e.target.value})}
-          />
-        </div>
+          <div className="mb-3">
+            <label>First name</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter first name..."
+              onChange={e=>this.setState({fname:e.target.value})}
+            />
+          </div>
 
-        <div className="mb-3">
-          <label>Last name</label>
-          <input type="text" className="form-control" placeholder="Enter last name..." onChange={e=>this.setState({lname:e.target.value})}/>
-        </div>
+          <div className="mb-3">
+            <label>Last name</label>
+            <input type="text" className="form-control" placeholder="Enter last name..." onChange={e=>this.setState({lname:e.target.value})}/>
+          </div>
 
-        <div className="mb-3">
-          <label>Email </label>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Enter email..."
-            onChange={e=>this.setState({email:e.target.value})}
-          />
-        </div>
+          <div className="mb-3">
+            <label>Email </label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Enter email..."
+              onChange={e=>this.setState({email:e.target.value})}
+            />
+          </div>
 
-        <div className="mb-3">
-          <label>Password</label>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Enter password..."
-            onChange={e=>this.setState({password:e.target.value})}
-          />
-        </div>
+          <div className="mb-3">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter password..."
+              onChange={e=>this.setState({password:e.target.value})}
+            />
+          </div>
 
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            Sign Up
-          </button>
-        </div>
-        <p className="forgot-password text-right">
-          Already registered? <a href="/sign-in">Sign in!</a>
-        </p>
-      </form>
+          <div className="d-grid">
+            <button type="submit" className="btn btn-primary">
+              Sign Up
+            </button>
+          </div>
+          <p className="forgot-password text-right">
+            Already registered? <a href="/sign-in">Sign in!</a>
+          </p>
+        </form>
+      </div>
     )
   }
 }

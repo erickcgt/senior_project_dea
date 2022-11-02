@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import './LoginAndSignUp.css';
 
 export default class UserInfo extends Component{
     constructor(props){
@@ -27,7 +28,7 @@ export default class UserInfo extends Component{
     }
     render(){
     return(
-            <div>
+            <div className="user-info">
                 Name<h1>{this.state.userInfo.fname}</h1>
                 Email<h1>{this.state.userInfo.email}</h1>
             </div>
