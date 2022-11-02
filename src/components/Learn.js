@@ -6,8 +6,54 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 
+function checkAnswer1(){
+  
+  var selectionQ1 = document.getElementById("q1option2");
+  if (selectionQ1.checked == true){
+    alert("Correct!");
+    
+  }
+  else{
+    alert("Incorrect. Try again!");
+  }
+}
 
 
+function checkAnswer2(){
+  
+  var selectionQ2 = document.getElementById("q2option1");
+  if (selectionQ2.checked == true){
+    alert("Correct!");
+    
+  }
+  else{
+    alert("Incorrect. Try again!");
+  }
+}
+
+function checkAnswer3(){
+  
+  var selectionQ3 = document.getElementById("q3option3");
+  if (selectionQ3.checked == true){
+    alert("Correct!");
+    
+  }
+  else{
+    alert("Incorrect. Try again!");
+  }
+}
+
+function checkAnswer4(){
+  
+  var selectionQ4 = document.getElementById("q4option2");
+  if (selectionQ4.checked == true){
+    alert("Correct!");
+    
+  }
+  else{
+    alert("Incorrect. Try again!");
+  }
+}
 
 function LearnPage() {
 
@@ -56,9 +102,28 @@ function LearnPage() {
     paddingTop: "10px"
   }
 
+  const [answer1, setSelection1] = React.useState('');
+  const onChange1 = e => {
+    setSelection1(e.target.value)
+  }
+
+  const [answer2, setSelection2] = React.useState('');
+  const onChange2 = e => {
+    setSelection2(e.target.value)
+  }
+
+  const [answer3, setSelection3] = React.useState('');
+  const onChange3 = e => {
+    setSelection3(e.target.value)
+  }
+
+  const [answer4, setSelection4] = React.useState('');
+  const onChange4 = e => {
+    setSelection4(e.target.value)
+  }
 
   return (
-    <div style={container}>
+    <div id="learndiv" style={container}>
       <h4 style={heading}>Secure Code Concepts</h4>
       <Tabs fill justify defaultActiveKey="first" style={tabs}>
         <Tab eventKey="first" title="Cross-Site Scripting" style={tab}>
@@ -76,27 +141,35 @@ function LearnPage() {
               {['radio'].map((type) => (
                 <div className="mb-4">
                   <Form.Group>
-                    <Form.Check
+                    <Form.Check id="q1option1"
                       inline
                       label="True"
                       name="answer1"
                       type={type}
-                      value="true"
+                      value="True"
+                      checked={answer1==="True"}
+                      onChange={onChange1}                      
 
                     />
-                    <Form.Check
+                    <Form.Check id="q1option2"
                       inline
                       label="False"
                       name="answer1"
                       type={type}
-                      value="false"
+                      value="False"
+                      checked={answer1==="False"}
+                      onChange={onChange1}                     
 
                     />
-                  </Form.Group>
+                  </Form.Group>                  
                 </div>
               ))}
             </Form>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" onClick={checkAnswer1}>Submit</Button>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            You selected: <strong>{answer1}</strong>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
@@ -118,43 +191,56 @@ function LearnPage() {
               {['radio'].map((type) => (
                 <div className="mb-4">
                   <Form.Group>
-                    <Form.Check
+                    <Form.Check id="q2option1"
                       inline
                       label="Least privilege principle"
                       name="answer2"
                       type={type}
                       value="Least privilege principle"
+                      checked={answer2==="Least privilege principle"}
+                      onChange={onChange2}
 
                     />
-                    <Form.Check
+                    <Form.Check id="q2option2"
                       inline
                       label="Most privilege principle"
                       name="answer2"
                       type={type}
                       value="Most privilege principle"
+                      checked={answer2==="Most privilege principle"}
+                      onChange={onChange2}
+                      
 
                     />
-                    <Form.Check
+                    <Form.Check id="q2option3"
                       inline
                       label="Cleaning"
                       name="answer2"
                       type={type}
                       value="Cleaning"
+                      checked={answer2==="Cleaning"}
+                      onChange={onChange2}
 
                     />
-                    <Form.Check
+                    <Form.Check id="q2option4"
                       inline
                       label="Sweeping"
                       name="answer2"
                       type={type}
                       value="Sweeping"
+                      checked={answer2==="Sweeping"}
+                      onChange={onChange2}
 
                     />
                   </Form.Group>
                 </div>
               ))}
             </Form>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" onClick={checkAnswer2}>Submit</Button>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            You selected: <strong>{answer2}</strong>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
@@ -179,43 +265,56 @@ function LearnPage() {
               {['radio'].map((type) => (
                 <div className="mb-4">
                   <Form.Group>
-                    <Form.Check
+                    <Form.Check  id="q3option1"
                       inline
                       label="Symmetric key"
                       name="answer3"
                       type={type}
                       value="Symmetric key"
+                      checked={answer3==="Symmetric key"}
+                      onChange={onChange3}
 
                     />
-                    <Form.Check
+                    <Form.Check  id="q3option2"
                       inline
                       label="Asymmetric key"
                       name="answer3"
                       type={type}
                       value="Asymmetric key"
+                      checked={answer3==="Asymmetric key"}
+                      onChange={onChange3}
 
                     />
-                    <Form.Check
+                    <Form.Check  id="q3option3"
                       inline
                       label="Hash functions"
                       name="answer3"
                       type={type}
                       value="Hash functions"
+                      checked={answer3==="Hash functions"}
+                      onChange={onChange3}
+                      
 
                     />
-                    <Form.Check
+                    <Form.Check  id="q3option4"
                       inline
                       label="0-hash"
                       name="answer3"
                       type={type}
                       value="0-hash"
+                      checked={answer3==="0-hash"}
+                      onChange={onChange3}
 
                     />
                   </Form.Group>
                 </div>
               ))}
             </Form>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" onClick={checkAnswer3}>Submit</Button>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            You selected: <strong>{answer3}</strong>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
@@ -242,27 +341,35 @@ function LearnPage() {
               {['radio'].map((type) => (
                 <div className="mb-4">
                   <Form.Group>
-                    <Form.Check
+                    <Form.Check id="q4option1"
                       inline
                       label="True"
                       name="answer4"
                       type={type}
-                      value="true"
+                      value="True"
+                      checked={answer4==="True"}
+                      onChange={onChange4}      
 
                     />
-                    <Form.Check
+                    <Form.Check id="q4option2"
                       inline
                       label="False"
                       name="answer4"
                       type={type}
-                      value="false"
+                      value="False"
+                      checked={answer4==="False"}
+                      onChange={onChange4}      
 
                     />
                   </Form.Group>
                 </div>
               ))}
             </Form>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" onClick={checkAnswer4}>Submit</Button>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            You selected: <strong>{answer4}</strong>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
