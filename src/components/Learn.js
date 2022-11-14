@@ -212,7 +212,7 @@ function LearnPage() {
           Sourced from OWASP.
         </Tab>
         <Tab eventKey="second" title="Encoding & Escaping" style={tab}>
-          Encoding and escaping can help prevent injection attacks, which will be discussed in the later sections. Encoding involves translating characters into another form. Escaping is used when not all of the characters have to be encoded. Here, a certain character is placed before a string or character to avoid misinterpretation. An example of this is placing a <strong>\</strong> character in front of <strong>"</strong> so that it is interpreted as part of the string or text.
+          Encoding and escaping can help prevent injection attacks, which will be discussed in the later sections. Encoding involves translating characters into another form. Escaping is used when not all of the characters have to be encoded. Here, a certain character is placed before a string or character to avoid misinterpretation. An example of this is placing a <strong>\</strong> character in front of <strong>"</strong> so that the <strong>"</strong> is interpreted as part of the string or text.
           <div style={{ paddingTop: "15px", width: "70%", alignItems: "center", marginLeft: "auto", marginRight: "auto" }}>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
