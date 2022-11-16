@@ -3,6 +3,26 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 
+function updateScore(token_, section_, index_){
+    fetch("http://localhost:5000/updatescore", {
+            method: "PUT",
+            crossDomain:true,
+            headers:{
+                "Content-Type":"application/json",
+                Accept:"application/json",
+                "Access-Control-Allow-Origin":"*",
+            },
+            body:JSON.stringify({
+                token:token_,
+                section:section_,
+                index:index_,
+            }),
+            }).then((res)=>res.json())
+            .then((data)=>{
+                console.log(data,"updatescore");
+        })
+}
+
 function submit(){
     //var gamepage = document.getElementById("gamepagediv");
     /*
@@ -14,6 +34,7 @@ function submit(){
 
     if(document.getElementById("search").value === "<script>alert('Attack Successful')</script>"){
         alert("Attack Successful");
+        updateScore(window.localStorage.getItem("token"), "game", "0");
     }
 
     return;
@@ -42,7 +63,8 @@ function submit2(){
         header.style.border = "1px solid black";
         headerRow.insertCell(0).innerHTML = "Usernames";
 
-        gamepage2.appendChild(table);        
+        gamepage2.appendChild(table); 
+        updateScore(window.localStorage.getItem("token"), "game", "1");       
     }
 
     return;
@@ -54,7 +76,7 @@ function submit3(){
 
     if(document.getElementById("email").value === "administrator'--"){
         alert("Logged in as admin");
-
+        updateScore(window.localStorage.getItem("token"), "game", "2");
     }
     return;
 }
@@ -65,7 +87,7 @@ function submit4(){
 
     if(document.getElementById("search-4").value === "http://www.testwebsite.com/accdashboard.html#context=&ltscript&gtSomeFunction(somevariable)&lt/script&gt"){
         alert("Great job! You successfully sanitized the URL.");
-
+        updateScore(window.localStorage.getItem("token"), "game", "3");
     }
     return;
 }
@@ -76,7 +98,7 @@ function submit5(){
 
     if(document.getElementById("key").value === "UFCSGatorsCybersecurity"){
         alert("Great job, you cracked the code!");
-
+        updateScore(window.localStorage.getItem("token"), "game", "4");
     }
     return;
 }

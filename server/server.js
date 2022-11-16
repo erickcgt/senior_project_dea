@@ -20,7 +20,7 @@ mongoose.connect(mongoUrl, {
 .catch(e=>console.log(e));
 
 server.post("/register", async(req, res)=>{
-    const {fname, lname, email, password} = req.body;
+    const {fname, lname, email, password, score} = req.body;
 
     const encryptedPass = await bcrypt.hash(password, 10);
 
@@ -34,7 +34,8 @@ server.post("/register", async(req, res)=>{
             fname,
             lname,
             email,
-            password:encryptedPass
+            password:encryptedPass,
+            score
         });
         res.send({status:"ok"})
     } catch(error){
@@ -84,6 +85,25 @@ server.post("/userInfo", async(req,res)=>{
     } catch(error){
 
     }
+})
+
+server.put("/updatescore", async(req,res)=>{
+    const {token,section,index} = req.body;
+    console.log("/updatescore put called in server.js")
+    try{
+        const user = jwtObj.verify(token, Jwt_secret_Obj);
+        const uEmail = user.email;
+        let field = section + "score." + index;
+        let updateQuery= {};
+        updateQuery[field] = 1
+        const result = await User.updateOne({email: uEmail}, {$set: updateQuery});
+        console.log("result: ");
+        console.log(result);
+        
+    } catch(error){
+
+    }
+
 })
 
 

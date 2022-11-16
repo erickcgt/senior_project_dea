@@ -5,13 +5,32 @@ import Tab from 'react-bootstrap/Tab';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+function updateScore(token_, section_, index_){
+  fetch("http://localhost:5000/updatescore", {
+          method: "PUT",
+          crossDomain:true,
+          headers:{
+              "Content-Type":"application/json",
+              Accept:"application/json",
+              "Access-Control-Allow-Origin":"*",
+          },
+          body:JSON.stringify({
+              token:token_,
+              section:section_,
+              index:index_,
+          }),
+          }).then((res)=>res.json())
+          .then((data)=>{
+              console.log(data,"updatescore");
+      })
+}
 
 function checkAnswer1(){
   
   var selectionQ1 = document.getElementById("q1option1");
   if (selectionQ1.checked == true){
     alert("Correct!");
-    
+    updateScore(window.localStorage.getItem("token"), "learn", "0");
   }
   else{
     alert("Incorrect. Try again!");
@@ -24,7 +43,7 @@ function checkAnswer2(){
   var selectionQ2 = document.getElementById("q2option3");
   if (selectionQ2.checked == true){
     alert("Correct!");
-    
+    updateScore(window.localStorage.getItem("token"), "learn", "1");
   }
   else{
     alert("Incorrect. Try again!");
@@ -36,7 +55,7 @@ function checkAnswer3(){
   var selectionQ3 = document.getElementById("q3option2");
   if (selectionQ3.checked == true){
     alert("Correct!");
-    
+    updateScore(window.localStorage.getItem("token"), "learn", "2");
   }
   else{
     alert("Incorrect. Try again!");
@@ -48,7 +67,7 @@ function checkAnswer4(){
   var selectionQ4 = document.getElementById("q4option1");
   if (selectionQ4.checked == true){
     alert("Correct!");
-    
+    updateScore(window.localStorage.getItem("token"), "learn", "3");
   }
   else{
     alert("Incorrect. Try again!");
@@ -60,7 +79,7 @@ function checkAnswer5(){
   var selectionQ5 = document.getElementById("q5option3");
   if (selectionQ5.checked == true){
     alert("Correct!");
-    
+    updateScore(window.localStorage.getItem("token"), "learn", "4");
   }
   else{
     alert("Incorrect. Try again!");
@@ -72,7 +91,7 @@ function checkAnswer6(){
   var selectionQ6 = document.getElementById("q6option2");
   if (selectionQ6.checked == true){
     alert("Correct!");
-    
+    updateScore(window.localStorage.getItem("token"), "learn", "5");
   }
   else{
     alert("Incorrect. Try again!");
