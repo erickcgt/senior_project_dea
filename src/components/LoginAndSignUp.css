@@ -38,7 +38,9 @@
 #gametitle{
     margin-top: 2%;
     margin-bottom: 5%;
-}
+    color: #2613fe;
+    text-decoration: underline;
+    }
 
 #tableDiv{
     padding-left: 32vw;

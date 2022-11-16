@@ -84,7 +84,7 @@ function submit5(){
 function GamePage() {
   return (
     <div id="gamepagediv">
-        <h1 id="gametitle">Game Page!</h1>
+        <h1 id="gametitle">Game Page</h1>
 
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
         <Row>
