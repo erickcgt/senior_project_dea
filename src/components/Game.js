@@ -64,7 +64,7 @@ function submit4(){
     console.log(gamepage);
 
     if(document.getElementById("search-4").value === "http://www.testwebsite.com/accdashboard.html#context=&ltscript&gtSomeFunction(somevariable)&lt/script&gt"){
-        alert("Great job you successfully sanitized the URL!");
+        alert("Great job! You successfully sanitized the URL.");
 
     }
     return;
@@ -75,13 +75,15 @@ function submit5(){
     console.log(gamepage);
 
     if(document.getElementById("key").value === "UFCSGatorsCybersecurity"){
-        alert("Great job you cracked the code!");
+        alert("Great job, you cracked the code!");
 
     }
     return;
 }
 
 function GamePage() {
+  
+
   return (
     <div id="gamepagediv">
         <h1 id="gametitle">Game Page</h1>
@@ -109,29 +111,29 @@ function GamePage() {
             </Col>
             <Col sm={9}>
             <Tab.Content>
-                <Tab.Pane eventKey="first">
-                    <p> 1. This first question focuses on Cross-Site Scripting (XSS). Type in a JavaScript command into the search bar to run a JavaScript alert that displays "Attack Successful". 
+                <Tab.Pane eventKey="first">                   
+                    <p> This first question focuses on Cross-Site Scripting (XSS). Type in a JavaScript command into the search bar to run a JavaScript alert that displays "Attack Successful". 
                     Hint: Wrap the JavaScript code with the script tag.  
                     </p>
                     <div className="search-container">
                     <input type="text" placeholder="Search...." id="search"></input>
-                    <button className="buton" onClick={submit}>Submit</button>
-                    </div>
+                    <button className="button" onClick={submit}>Submit</button>
+                    </div>                    
                 </Tab.Pane>
-                <Tab.Pane eventKey="second">
-                    <p> 2. This question focuses on running a SQL injection attack. Imagine that when we insert this URL into a browser https://test-website.com/accounts?info=Usernames
+                <Tab.Pane eventKey="second">                    
+                    <p> This question focuses on running a SQL injection attack. Imagine that when we insert this URL into a browser https://test-website.com/accounts?info=Usernames
                     this SQL command (SELECT * FROM accounts WHERE info = 'Usernames' AND hidden = 0) is run to return you a list of both usernames that are not hidden and those that are hidden. 
                     Update the URL so that a SQL injection attack is changed so that both unhidden and hidden usernames are displayed.
                     </p>
                     <div id="search-container-2" >
                     <input type="text" placeholder="Search...." id="search-2"></input>
-                    <button className="buton" onClick={submit2}>Submit</button>
+                    <button className="button" onClick={submit2}>Submit</button>
                     </div>
                     <div id="tableDiv">
-                    </div>
+                    </div>                    
                 </Tab.Pane>
-                <Tab.Pane eventKey="third">
-                    <p> 3. This question is a different varitation of a SQL injection attack. We have a login form where a person can type in their username and password. 
+                <Tab.Pane eventKey="third">                    
+                    <p> This question is a different varitation of a SQL injection attack. We have a login form where a person can type in their username and password. 
                     If a user types in "Bob" into the username and "12345" into the password field, a SQL query is performed on the database that looks like this 
                     SELECT * FROM users WHERE username = 'Bob' AND password = '12345'. If a website doesn't have the features necessary to protect against SQL injection,
                     someone can alter the SQL query to enable them to login as an administrator. Change the username and password so you can login as the administrator.
@@ -139,30 +141,30 @@ function GamePage() {
                     <div id="search-container-3">
                     <input type="text" placeholder="Email..." id="email"></input>
                     <input type="text" placeholder="Password..." id="password"></input>
-                    <button className="buton" onClick={submit3}>Login</button>
-                    </div>
+                    <button className="button" onClick={submit3}>Login</button>
+                    </div>                    
                 </Tab.Pane>
-                <Tab.Pane eventKey="fourth">
-                    <p>5. This question is about input sanitation to precent things such as Cross-Site Scrypting attacks. Imagine an attacker types in a URL that has some 
+                <Tab.Pane eventKey="fourth">                    
+                    <p>This question is about input sanitation to precent things such as Cross-Site Scrypting attacks. Imagine an attacker types in a URL that has some 
                         script to run some malicious function into a browser (Ex: http://www.testwebsite.com/accdashboard.html#context=<script>SomeFunction(somevariable)</script>). 
                         A secure browser with input sanitation would change a malicious input by replacing, removing, or escaping characters. Manipulate this input just as a secure 
                         browser would so that the script is not run as code, but interpreted as data and type your answer into the input field.
                      </p>
                      <div id="search-container-4">
                     <input type="text" placeholder="Type in answer..." id="search-4"></input>
-                    <button className="buton" onClick={submit4}>Submit</button>
-                    </div>
+                    <button className="button" onClick={submit4}>Submit</button>
+                    </div>                    
                 </Tab.Pane>
-                <Tab.Pane eventKey="fifth">
-                    <p>4. This question focuses on decrypting some text to make sense of it. In this case we have used a Caeser Cypher to encrypt the text. You have to figure out 
+                <Tab.Pane eventKey="fifth">                    
+                    <p>This question focuses on decrypting some text to make sense of it. In this case we have used a Caeser Cypher to encrypt the text. You have to figure out 
                         what our shifting key is to decode the text. Go to this website (https://www.dcode.fr/caesar-cipher) and decrypt this text 
                         (Nylha qvi, fvb zbjjlzzmbssf kljyfwalk aopz tlzzhnl! Aol zljyla rlf pz: BMJZNhavyzJfilyzljbypaf) to get the secret key
                         key and type it into the input field to receive credit. Hint: The key is a number between 1 and 10.
                     </p>
                     <div id="search-container-5">
                     <input type="text" placeholder="Type in secret key..." id="key"></input>
-                    <button className="buton" onClick={submit5}>Submit</button>
-                    </div>
+                    <button className="button" onClick={submit5}>Submit</button>
+                    </div>                    
                 </Tab.Pane>
             </Tab.Content>
             </Col>
