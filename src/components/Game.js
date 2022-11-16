@@ -115,7 +115,7 @@ function GamePage() {
                     </p>
                     <div className="search-container">
                     <input type="text" placeholder="Search...." id="search"></input>
-                    <button onClick={submit}>Submit</button>
+                    <button className="buton" onClick={submit}>Submit</button>
                     </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
@@ -125,7 +125,7 @@ function GamePage() {
                     </p>
                     <div id="search-container-2" >
                     <input type="text" placeholder="Search...." id="search-2"></input>
-                    <button onClick={submit2}>Submit</button>
+                    <button className="buton" onClick={submit2}>Submit</button>
                     </div>
                     <div id="tableDiv">
                     </div>
@@ -139,7 +139,7 @@ function GamePage() {
                     <div id="search-container-3">
                     <input type="text" placeholder="Email..." id="email"></input>
                     <input type="text" placeholder="Password..." id="password"></input>
-                    <button onClick={submit3}>Login</button>
+                    <button className="buton" onClick={submit3}>Login</button>
                     </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="fourth">
@@ -150,7 +150,7 @@ function GamePage() {
                      </p>
                      <div id="search-container-4">
                     <input type="text" placeholder="Type in answer..." id="search-4"></input>
-                    <button onClick={submit4}>Submit</button>
+                    <button className="buton" onClick={submit4}>Submit</button>
                     </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="fifth">
@@ -161,7 +161,7 @@ function GamePage() {
                     </p>
                     <div id="search-container-5">
                     <input type="text" placeholder="Type in secret key..." id="key"></input>
-                    <button onClick={submit5}>Submit</button>
+                    <button className="buton" onClick={submit5}>Submit</button>
                     </div>
                 </Tab.Pane>
             </Tab.Content>
