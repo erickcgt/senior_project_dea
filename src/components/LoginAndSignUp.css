@@ -28,3 +28,19 @@
 .user-info{
     font-family: 'Gluten';
 }
+
+/*Code below is for the game page*/
+
+#gamepagediv{
+    font-family: 'Gluten';
+}
+
+#gametitle{
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+#tableDiv{
+    padding-left: 32vw;
+    padding-top: 25px;
+}
