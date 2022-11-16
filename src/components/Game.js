@@ -103,6 +103,11 @@ function submit5(){
     return;
 }
 
+const box = {
+    boxShadow: "0 3px 10px rgba(0,0,0,.3)",
+    padding: "30px 40px"
+}
+
 function GamePage() {
   
 
@@ -111,7 +116,7 @@ function GamePage() {
         <h1 id="gametitle">Game Page</h1>
 
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-        <Row>
+        <Row style={box}>
             <Col sm={3}>
             <Nav variant="pills" className="flex-column">
                 <Nav.Item>
