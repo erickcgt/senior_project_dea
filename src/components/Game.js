@@ -124,7 +124,7 @@ function GamePage() {
                 <Nav.Link eventKey="third">Q3: Login SQL Injection</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link eventKey="fourth">Q4: Input Sanitation </Nav.Link>
+                <Nav.Link eventKey="fourth">Q4: Input Sanitization </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                 <Nav.Link eventKey="fifth">Q5: Cryptography</Nav.Link>
@@ -167,7 +167,7 @@ function GamePage() {
                     </div>                    
                 </Tab.Pane>
                 <Tab.Pane eventKey="fourth">                    
-                    <p>This question is about input sanitation to prevent things such as Cross-Site Scrypting attacks. Imagine an attacker types in a URL that has some 
+                    <p>This question is about input sanitization to prevent things such as Cross-Site Scrypting attacks. Imagine an attacker types in a URL that has some 
                         script to run some malicious function into a browser (Ex: http://www.testwebsite.com/accdashboard.html#context=&lt;script&gt;SomeFunction(somevariable)&lt;/script&gt;). 
                         A secure browser with input sanitation would change a malicious input by replacing, removing, or escaping characters. Manipulate this input just as a secure 
                         browser would so that the script is not run as code, but interpreted as data and type your answer into the input field.
