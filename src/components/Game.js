@@ -145,8 +145,8 @@ function GamePage() {
                     </div>                    
                 </Tab.Pane>
                 <Tab.Pane eventKey="fourth">                    
-                    <p>This question is about input sanitation to precent things such as Cross-Site Scrypting attacks. Imagine an attacker types in a URL that has some 
-                        script to run some malicious function into a browser (Ex: http://www.testwebsite.com/accdashboard.html#context=<script>SomeFunction(somevariable)</script>). 
+                    <p>This question is about input sanitation to prevent things such as Cross-Site Scrypting attacks. Imagine an attacker types in a URL that has some 
+                        script to run some malicious function into a browser (Ex: http://www.testwebsite.com/accdashboard.html#context=&lt;script&gt;SomeFunction(somevariable)&lt;/script&gt;). 
                         A secure browser with input sanitation would change a malicious input by replacing, removing, or escaping characters. Manipulate this input just as a secure 
                         browser would so that the script is not run as code, but interpreted as data and type your answer into the input field.
                      </p>
