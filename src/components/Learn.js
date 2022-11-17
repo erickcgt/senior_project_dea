@@ -177,7 +177,7 @@ function LearnPage() {
 
   return (
     <div id="learndiv" style={container}>
-      <h4 style={heading}>Secure Code Concepts</h4>
+      <h4 style={heading}>Learn</h4>
       <Tabs fill justify defaultActiveKey="first" style={tabs}>
       <Tab eventKey="first" title="Input Validation" style={tab}>
           Input validation is used to check the data that is being entered to ensure it is of the proper form. It should be applied to both syntactical and semantic levels and occur as soon as data is being entered from the user.
