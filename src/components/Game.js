@@ -33,9 +33,12 @@ function submit(){
     */
 
     if(document.getElementById("search").value === "<script>alert('Attack Successful')</script>"){
-        alert("Attack Successful");
+        alert("Attack successful!");
         updateScore(window.localStorage.getItem("token"), "game", "0");
     }
+    else{
+        alert("Incorrect. Try again!");
+      }
 
     return;
 }
@@ -66,6 +69,9 @@ function submit2(){
         gamepage2.appendChild(table); 
         updateScore(window.localStorage.getItem("token"), "game", "1");       
     }
+    else{
+        alert("Incorrect. Try again!");
+      }
 
     return;
 }
@@ -75,9 +81,12 @@ function submit3(){
     console.log(gamepage);
 
     if(document.getElementById("email").value === "administrator'--"){
-        alert("Logged in as admin");
+        alert("Logged in as administrator.");
         updateScore(window.localStorage.getItem("token"), "game", "2");
     }
+    else{
+        alert("Incorrect. Try again!");
+      }
     return;
 }
 
@@ -89,6 +98,9 @@ function submit4(){
         alert("Great job! You successfully sanitized the URL.");
         updateScore(window.localStorage.getItem("token"), "game", "3");
     }
+    else{
+        alert("Incorrect. Try again!");
+      }
     return;
 }
 
@@ -100,6 +112,9 @@ function submit5(){
         alert("Great job, you cracked the code!");
         updateScore(window.localStorage.getItem("token"), "game", "4");
     }
+    else{
+        alert("Incorrect. Try again!");
+      }
     return;
 }
 

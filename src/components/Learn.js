@@ -295,6 +295,9 @@ function LearnPage() {
             <li><strong>Stored:</strong> Web application stores the malicious code in a server or database and passes it on to other users.</li><div style={{ paddingBottom: "10px" }}></div>
             <li><strong>Document Object Model (DOM)-based:</strong> Triggered by JavaScript events and runs immediately. The attack is embedded into the existing webpage. </li><div style={{ paddingBottom: "10px" }}></div>
           </ul>
+             One case of XSS is an insertion using the script tag. For example, a possible script could be <strong>&lt;script&gt;alert('Display message here')&lt;/script&gt;</strong>, and the page would execute the script.
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
           </div> Q: The reflected type of XSS is stored within a database. True or False?<div style={spaceAfterQ}></div>
@@ -342,8 +345,9 @@ function LearnPage() {
         </Tab>
         <Tab eventKey="fourth" title="SQL Injection" style={tab}>
           SQL injection happens when an attacker inputs a SQL statement into a user input, allowing the attacker to view data that they should not be able to access. This attack can allow modification of a database using Insert/Update/Delete or even gaining control to root user privileges.  <div style={spaceAfterQ}></div>
-          The best way to prevent this attack is by sanitizing input, which means escaping certain SQL characters. Additionally, only giving the least amount of privilege necessary is also a great principle to follow.
+          The best way to prevent this attack is by sanitizing input, which means escaping certain SQL characters. One example is to not run a script tag, you can type a less than or greater than sign using '&lt' and '&gt'. Additionally, only giving the least amount of privilege necessary is also a great principle to follow.
           <div style={spaceAfterQ}></div>
+          Structured Query Language (SQL) uses the form 'SELECT FROM WHERE' where one example is that you can SELECT attribute FROM relation WHERE attribute=value in a database. One example could be (SELECT * FROM Users WHERE userID='1234' OR 1=1), where the 1=1 is always true and * means all. Therefore, an attacker could insert '1234 OR 1=1' into a field and may be able to get access to all user information. Additionally, if an attacker wanted adminstrator access they could insert a username such as admin'-- to complete the WHERE clause. The -- indicates the start of a comment in SQL and could be used to bypass the password field.
           <div style={spaceAfterQ}></div>
           <div style={spaceAfterQ}></div>
           <div style={spaceAfterQ}></div>
