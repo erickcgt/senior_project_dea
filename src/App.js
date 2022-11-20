@@ -9,15 +9,18 @@ import Login from './components/Login'
 import SignUp from './components/SignUp'
 import UserInfo from './components/UserInfo'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { useLocation } from 'react-router-dom';
 
 function App() {
+  const { pathname } = useLocation();
   return (
     <>
-      <MyNavbar />
       <div className="App">
         <div className="auth-wrapper">
           <div className="auth-inner">
+          { (pathname !== '/sign-in' && pathname !== '/sign-up') && <MyNavbar /> }
             <Routes>
+              
               <Route path="/welcome" element={<MyWelcomePage />} />
               <Route path="/learn" element={<LearnPage />} />
               <Route path="/game" element={<GamePage />} />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './LoginAndSignUp.css';
+import LoginBanner from './LoginBanner';
 import gator from '../images/gator.png';
 
 export default class SignUp extends Component {
@@ -43,6 +44,8 @@ export default class SignUp extends Component {
   render() {
     return (
       <div>
+        <LoginBanner/>
+        <br/>
         <img className="gator-image" src={gator}  />
         <form onSubmit={this.handleSubmit}>
           <h3 className='title-name'>Sign Up</h3>
