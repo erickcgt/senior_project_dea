@@ -1,16 +1,6 @@
 import React from 'react';
-import {
-  MDBCol,
-  MDBContainer,
-  MDBRow,
-  MDBCard,
-  MDBCardText,
-  MDBCardBody,
-  MDBCardImage, 
-  MDBProgress,
-  MDBProgressBar
- 
-} from 'mdb-react-ui-kit';
+import './personalProfile.css';
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon, MDBProgress, MDBProgressBar, MDBBtn } from 'mdb-react-ui-kit';
 
 export default class ProfilePage extends React.Component {
     constructor(props){

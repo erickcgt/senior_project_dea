@@ -18,7 +18,8 @@
 
 .gator-image{
     width: auto;
-    height: 20vh;
+    height: 22.5vh;
+    
 }
 
 .forgot-password{
@@ -38,6 +39,10 @@
     margin-right: auto;
     padding-Top: 50px;
     font-family: "Gluten";
+}
+
+.bannerSpacer{
+    padding-bottom: 20px;
 }
 
 #gametitle{

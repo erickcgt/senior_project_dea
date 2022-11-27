@@ -1,38 +1,68 @@
-function MyWelcomePage(){
+import React from 'react';
+import {
+  MDBCarousel,
+  MDBCarouselItem,
+} from 'mdb-react-ui-kit';
 
-    const welcomeHeader = {        
-        fontFamily: "Gluten",
-        fontSize: "40px",
-        color: "#FA4616" 
-    };
-    const welcomeText = {        
-        fontFamily: "Gluten",
-        fontSize: "22px" 
-    };
-    const welcomeContainer = {
-        border: "15px double #2613fe",
-        width: "700px",
-        padding: "30px 30px",        
+export default function App() {
+
+    const carousel = {           
+                   
         position: "absolute",
         top: "calc(50% + 40px)",
         left: "50%",
         transform: "translate(-50%, -50%)"
-      
-    };
-    const mainPage = {      
-        width: "100%",
-        height:"100%"
-    };
+    }
 
+    const title = {
+        fontFamily:"Gluten",        
+        color:"white"
+    }
 
-    return(
-        <div style={mainPage}>
-        <div style={welcomeContainer}>
-        <div style={welcomeHeader}>Welcome, User!</div>
-        <div style={welcomeText}>Please navigate through the website to read about different security topics, and then test your knowledge through the game. Score points by thoroughly reading and answering questions as well as completing activities in the game. Check out your profile to see your stats. Best of luck!</div>
-        </div>
-        </div>
-    );
+    const caption = {
+        fontFamily:"Gluten",
+        color:"white"
+    }
+
+    const image = {
+        height:"8rem"
+    }
+
+ 
+
+  return (
+    <MDBCarousel showControls showIndicators style={carousel}>
+      <MDBCarouselItem        
+        className='w-100 d-block'
+        itemId={1}
+        src='./welcomeBkgdBlue.png'
+        alt='...'
+        
+      >
+        <img src='./welcomeImg.png' style={image}></img>
+        <h5 style={title}>Welcome User!</h5>
+        <p style={caption}>Please navigate to the "Learn" page to read up on important topics, and then head over to the "Game" page to test your knowledge.</p>
+      </MDBCarouselItem>
+      <MDBCarouselItem
+        className='w-100 d-block'
+        itemId={2}
+        src='./welcomeBkgdOrange.png'
+        alt='...'
+      >
+        <img src='./scoreImg.png' style={image}></img>
+        <h5 style={title}>Checking Your Score</h5>
+        <p style={caption}>Take a look at your "My Profile" page to see your progress. There you can see how many sections and game questions you have completed. Keep up the great work!</p>
+      </MDBCarouselItem>
+      <MDBCarouselItem        
+        className='w-100 d-block'
+        itemId={3}
+        src='./welcomeBkgdBlue.png'
+        alt='...'
+      >
+        <img src='./creatorImg.png' style={image}></img>
+        <h5 style={title}>The Creators</h5>
+        <p style={caption}>This website was created by University of Florida students Daymao Silva, Erick Gonzalez, and Annalina Becker for their Fall 2022 senior project. They were advised under Professor Cheryl Resch.</p>
+      </MDBCarouselItem>
+    </MDBCarousel>
+  );
 }
-
-export default MyWelcomePage;
