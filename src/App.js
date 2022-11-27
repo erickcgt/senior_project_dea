@@ -18,9 +18,8 @@ function App() {
       <div className="App">
         <div className="auth-wrapper">
           <div className="auth-inner">
-          { (pathname !== '/sign-in' && pathname !== '/sign-up') && <MyNavbar /> }
+          { (pathname !== '/sign-in' && pathname !== '/sign-up' && pathname != '/') && <MyNavbar /> }
             <Routes>
-              
               <Route path="/welcome" element={<MyWelcomePage />} />
               <Route path="/learn" element={<LearnPage />} />
               <Route path="/game" element={<GamePage />} />

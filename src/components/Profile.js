@@ -42,34 +42,8 @@ export default class ProfilePage extends React.Component {
         fontSize: "40px",
         paddingBottom: "10px",
         textDecorationLine: "underline"
+    
       };
-      const userCard = {                
-        outline: "5px solid #2613fe"      
-      }
-      const progressCard = {    
-        outline: "5px solid #f07552"           
-      }
-      const line = {
-        color: "#2613fe",
-        opacity: "100"
-      }
-      const progressText = {
-        color: "black",
-        paddingBottom: "20px"
-      }
-      const progressHeader = {
-        color: "black",
-        textDecorationLine: "underline",
-        fontSize: "20px",
-        paddingBottom: "21px",
-        paddingTop: "20px"
-      }    
-      const spaceAfterBar = {
-        paddingBottom: "35px"
-      }
-      const cardSpacing = {
-        paddingLeft: "20px"
-      }
       
       if(this.state.userInfo == null){
         return <div></div>
@@ -84,72 +58,63 @@ export default class ProfilePage extends React.Component {
       var learnPercentage = Math.floor(learnScore/learnMax * 100);
       return (
         <section style={container}>
-            <h4 style={heading}>My Profile</h4>
-        <MDBContainer className="py-5">         
-            <MDBRow>
-            <MDBCol lg="4">
-                <MDBCard className="mb-4" style={userCard}>
-                <MDBCardBody className="text-center">
-                    <MDBCardImage
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                    alt="avatar"
-                    className="rounded-circle"
-                    style={{ width: '150px', paddingBottom: '50px' }}
-                    fluid />                      
-                    <MDBRow>
-                    <MDBCol sm="3">
-                        <MDBCardText>Full Name</MDBCardText>
+          <h4 style={heading}>My Profile</h4>
+          <MDBContainer className="py-5 h-100">
+            <MDBRow className="justify-content-center align-items-center h-100">
+              <MDBCol lg="8" className="mb-4 mb-lg-0">
+                <MDBCard style={{ borderRadius: '.5rem' }}>
+                  <MDBRow className="g-0">
+                    <MDBCol md="4" className="gradient-custom text-center text-white"
+                      style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
+                      <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                        alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
+                      <MDBTypography tag="h5">{fullName}</MDBTypography>
+                      <MDBCardText>CS Undergraduate</MDBCardText>  
+                      <MDBBtn outline color="light" style={{height: '36px', overflow: 'visible'}}>
+                        Edit profile
+                      </MDBBtn>             
                     </MDBCol>
-                    <MDBCol sm="9">
-                        <MDBCardText>{fullName}</MDBCardText>
+                    <MDBCol md="8">
+                      <MDBCardBody className="p-4">
+                        <MDBTypography tag="h6">Information</MDBTypography>
+                        <hr className="mt-0 mb-4" />
+                        <MDBRow className="pt-1">
+                          <MDBCol size="6" className="mb-3">
+                            <MDBTypography tag="h6">Email</MDBTypography>
+                            <MDBCardText className="text-muted">{email}</MDBCardText>
+                          </MDBCol>
+                          <MDBCol size="6" className="mb-3">
+                            <MDBTypography tag="h6">Password</MDBTypography>
+                            <MDBCardText className="text-muted">*********</MDBCardText>
+                          </MDBCol>
+                        </MDBRow>
+                        <MDBTypography tag="h6">My Progress</MDBTypography>
+                        <hr className="mt-0 mb-4" />
+                        <MDBRow className="pt-1">
+                          <MDBCol size="6" className="mb-3">
+                            <MDBTypography tag="h6">Learn</MDBTypography>
+                            <MDBProgress className="rounded" height='30'>
+                            <MDBProgressBar striped animated width={learnPercentage} valuemin={0} valuemax={100}> {learnPercentage}% </MDBProgressBar>
+                            </MDBProgress>
+                            <MDBCardText style={{paddingTop:'20px'}}>{learnScore}/{learnMax} Sections Completed</MDBCardText>
+                          </MDBCol>
+                          <MDBCol size="6" className="mb-3">
+                            <MDBTypography tag="h6">Game</MDBTypography>
+                            <MDBProgress className="rounded" height='30'>
+                            <MDBProgressBar striped animated width={gamePercentage} valuemin={0} valuemax={100}> {gamePercentage}% </MDBProgressBar>
+                            </MDBProgress>  
+                            <MDBCardText style={{paddingTop:'20px'}}>{gameScore}/{gameMax} Games Completed</MDBCardText>                      
+                          </MDBCol>
+                        </MDBRow>                    
+                      </MDBCardBody>
                     </MDBCol>
-                    </MDBRow>
-                    <hr style={line}/>
-                    <MDBRow>
-                    <MDBCol sm="3">
-                        <MDBCardText>Email</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                        <MDBCardText>{email}</MDBCardText>
-                    </MDBCol>
-                    </MDBRow>
-                    <hr style={line}/>
-                    <MDBRow>
-                    <MDBCol sm="3">
-                        <MDBCardText>Password</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                        <MDBCardText>*******</MDBCardText>
-                    </MDBCol>
-                    </MDBRow>        
-                        
-                </MDBCardBody>
-                </MDBCard>            
-            </MDBCol>          
-            <MDBCol lg="8" style={cardSpacing}>
-                <MDBCard className="mb-4" style={progressCard}>
-                <MDBCardBody>
-                <MDBCardText className="mb-4" style={progressHeader}>My Progress</MDBCardText>
-                        <MDBCardText className="mb-1" style={progressText}>Learn - ({learnScore}/{learnMax} Completed)</MDBCardText>
-                        <MDBProgress className="rounded" height='30'>
-                        <MDBProgressBar striped animated width={learnPercentage} valuemin={0} valuemax={100}> {learnPercentage}% </MDBProgressBar>
-                        </MDBProgress>
-                        <div style={spaceAfterBar}></div>
-                        <MDBCardText className="mt-4 mb-1" style={progressText}>Game - ({gameScore}/{gameMax} Completed)</MDBCardText>
-                        <MDBProgress className="rounded" height='30'>
-                        <MDBProgressBar striped animated width={gamePercentage} valuemin={0} valuemax={100}> {gamePercentage}% </MDBProgressBar>
-                        </MDBProgress>
-                        <div style={spaceAfterBar}></div>
-                    
-                </MDBCardBody>
+                  </MDBRow>
                 </MDBCard>
-
-            
-            </MDBCol>
+              </MDBCol>
             </MDBRow>
-        </MDBContainer>
-        </section>
-      );
+          </MDBContainer>
+      </section>
+    );
     }
     
 }
