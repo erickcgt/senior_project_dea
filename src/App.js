@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import Login from './components/Login'
 import SignUp from './components/SignUp'
 import UserInfo from './components/UserInfo'
+import Admin from './components/Admin'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { useLocation } from 'react-router-dom';
 
@@ -28,6 +29,7 @@ function App() {
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/userInfo" element={<UserInfo />} />
+              <Route path="/admin" element={<Admin />} />
             </Routes>
           </div>
         </div>

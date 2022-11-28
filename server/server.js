@@ -87,6 +87,20 @@ server.post("/userInfo", async(req,res)=>{
     }
 })
 
+server.post("/allUsers", async(req,res)=>{
+    console.log("/allUsers")
+    try{
+        User.find({}).then((data)=>{
+            res.send(data);
+        })
+        .catch((error)=>{
+            res.send({status: "error", data:error});
+        });
+    } catch(error){
+
+    }
+})
+
 server.put("/updatescore", async(req,res)=>{
     const {token,section,index} = req.body;
     console.log("/updatescore put called in server.js")
