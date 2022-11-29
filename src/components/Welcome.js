@@ -4,8 +4,32 @@ import {
   MDBCarouselItem,
 } from 'mdb-react-ui-kit';
 
-export default function App() {
-
+export default class WelcomePage extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      userInfo: null
+    };
+  }
+  componentDidMount(){
+    fetch("http://localhost:5000/userInfo", 
+      {
+        method: "POST",
+        crossDomain:true,
+        headers:{
+          "Content-Type":"application/json",
+          Accept:"application/json",
+          "Access-Control-Allow-Origin":"*",
+      },
+      body:JSON.stringify({
+        token:window.localStorage.getItem("token"),
+      }),
+      }).then((res)=>res.json())
+      .then(data=>{
+        this.setState({userInfo: data.data});
+      });
+  }
+  render(){
     const carousel = {           
                    
         position: "absolute",
@@ -29,6 +53,10 @@ export default function App() {
     }
 
  
+    if(this.state.userInfo == null){
+      return <div></div>
+    }
+    var name = this.state.userInfo["fname"];
 
   return (
     <MDBCarousel showControls showIndicators style={carousel}>
@@ -40,7 +68,7 @@ export default function App() {
         
       >
         <img src='./welcomeImg.png' style={image}></img>
-        <h5 style={title}>Welcome User!</h5>
+        <h5 style={title}>Welcome {name}!</h5>
         <p style={caption}>Please navigate to the "Learn" page to read up on important topics, and then head over to the "Game" page to test your knowledge.</p>
       </MDBCarouselItem>
       <MDBCarouselItem
@@ -65,4 +93,4 @@ export default function App() {
       </MDBCarouselItem>
     </MDBCarousel>
   );
-}
+}}

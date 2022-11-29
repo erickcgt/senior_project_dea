@@ -6,6 +6,9 @@
 /.pnp
 .pnp.js
 
+#sonarqube security testing
+sonar-project.properties
+
 # testing
 /coverage
 
