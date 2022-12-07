@@ -37,6 +37,7 @@ Then, run the following commands to install the necessary packages:
 4) npm install cors
 5) npm install bcryptjs
 6) npm install jsonwebtoken
+7) npm install --save dotenv
 
 Then within the package.json file, replace the scripts value "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -47,6 +48,10 @@ Then within the package.json file, replace the scripts value "scripts": {
   }
   
 Also, if the name value is note "Server", replace that name with "Server". It should be "Server" by default.
+
+To connect to a MongoDB database, run command "touch .env" in server folder and add these lines to the .env file: DB_USERNAME=username and 
+DB_PASSWORD=password and replace username and password with credentials for your database. For added security, add the .env to your .gitignore
+if you plan on using GitHub for your repository. 
 
 
 To run the server use the following command: node server
