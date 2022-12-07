@@ -1,6 +1,8 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const bcrypt = require("bcryptjs")
+const dotenv = require("dotenv")
+dotenv.config()
 
 const server = express()
 const cors=require("cors")
@@ -10,7 +12,7 @@ require("./userSchema")
 const jwtObj = require("jsonwebtoken");
 const Jwt_secret_Obj = "sfhgfhgefugefyfeyf63r36737288gssfgusducb@#$&fvdhfdgfuf76";
 const User = mongoose.model("UserInfo")
-const mongoUrl = "mongodb+srv://deaSquad:ghe627@cluster0.j81hdu6.mongodb.net/?retryWrites=true&w=majority"
+const mongoUrl = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.j81hdu6.mongodb.net/?retryWrites=true&w=majority`
 
 mongoose.connect(mongoUrl, {
     useNewUrlParser:true
