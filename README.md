@@ -20,6 +20,7 @@ REACT/BOOTSTRAP INSTALLATIONS:
 Run the following commands to install everything thats necessary for React and Bootstrap
 
 1) npm i mdb-react-ui-kit
+2) npm install react-bootstrap bootstrap
 
 To run the react portion just run: npm start
 
@@ -29,7 +30,7 @@ To get the server to work, follow these instructions.
 
 1) Delete the package.json and package-lock.json from the server folder
 
-Then, run the following commands to install the necessary packages:
+Then, run the following commands (within the server folder) to install the necessary packages:
 
 1) npm init
 2) npm install express nodemon
